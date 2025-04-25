@@ -1,183 +1,220 @@
-/* Osnovno centriranje strani in splošni slog */
+/* style.css */
+
+/* Osnovno centriranje in ozadje */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+body {
+  background: url("Slike/background.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glavna škatla */
+.center-box {
+  position: relative;
+  background-color: rgba(0,0,0,0.6);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 900px;
+  width: 90%;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/* Vizitka */
+.vizitka {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Gumb za navodila */
+#btn-navodila {
+  margin-bottom: 15px;
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+#btn-navodila:hover {
+  background-color: #2980b9;
+}
+
+/* Animiran naslov */
+.animated-title {
+  font-size: 3em;
+  margin: 0 0 20px;
+  color: #FFD700;
+  animation: neonPulse 2s infinite alternate;
+}
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 30px #FFD700,
+      0 0 40px #FFA500;
   }
-  
-  body {
-    background: url("Slike/background.png") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  100% {
+    text-shadow:
+      0 0 20px #FFA500,
+      0 0 30px #FFA500,
+      0 0 40px #FFD700,
+      0 0 50px #FFD700;
   }
-  
-  .center-box {
-    background-color: rgba(0,0,0,0.6);
-    border: 2px solid #fff;
-    border-radius: 10px;
-    padding: 30px;
-    max-width: 900px;
-    width: 90%;
-    box-sizing: border-box;
-    color: #fff;
-  }
-  
-  /* Animiran naslov */
-  .animated-title {
-    font-size: 3em;
-    margin: 0 0 20px 0;
-    color: #FFD700;
-    animation: neonPulse 2s infinite alternate;
-  }
-  
-  @keyframes neonPulse {
-    0% {
-      text-shadow: 
-        0 0 10px #FFD700,
-        0 0 20px #FFD700,
-        0 0 30px #FFD700,
-        0 0 40px #FFA500;
-    }
-    100% {
-      text-shadow: 
-        0 0 20px #FFA500,
-        0 0 30px #FFA500,
-        0 0 40px #FFD700,
-        0 0 50px #FFD700;
-    }
-  }
-  
-  h2, h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #fff;
-  }
-  
-  /* Select elementi */
-  select {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 4px;
-  }
-  
-  /* Gumbi */
-  input[type="submit"], button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  input[type="submit"]:hover, button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Izbirni elementi na koraku 0 */
-  .selection-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  .selection-item {
-    text-align: center;
-  }
-  
-  /* Fieldset za vnos igralcev vodoravno */
-  .fieldset-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  /* Slog za posamezen fieldset */
-  fieldset {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    width: 200px;
-    background-color: rgba(255,255,255,0.1);
-  }
-  
-  legend {
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  input[type="text"] {
-    width: 80%;
-    padding: 6px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  /* Škatla z rezultati ene runde */
-  .user-box {
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
-    padding: 15px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  /* Leaderboard tabela */
-  .leaderboard-table {
-    border-collapse: collapse;
-    background-color: rgba(255,255,255,0.1);
-    color: #fff;
-  }
-  .leaderboard-table th, .leaderboard-table td {
-    border: 1px solid #fff;
-    padding: 8px 12px;
-  }
-  
-  /* Polje za zmagovalca */
-  .winner-box {
-    display: inline-block;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 5px;
-    border: 1px solid #fff;
-    padding: 10px;
-  }
-  
-  /* Fade-in animacija */
-  .fade-in {
-    animation: fadeIn 0.6s ease;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Kocke */
-  .dice {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    vertical-align: middle;
-  }
-  
-  /* Delni seštevek */
-  .dice-sum {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  /* Timer */
-  #redirect-timer {
-    margin-top: 20px;
-    font-size: 1.2em;
-  }
-  
+}
+
+/* Izborni elementi */
+.selection-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.selection-item {
+  text-align: center;
+}
+select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* Vnos igralcev */
+.fieldset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  background-color: rgba(255,255,255,0.1);
+}
+legend {
+  font-weight: bold;
+  color: #fff;
+}
+input[type="text"] {
+  width: 80%;
+  padding: 6px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+
+/* Gumbi */
+input[type="submit"], button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+input[type="submit"]:hover, button:hover {
+  background-color: #2980b9;
+}
+
+/* Polje igralca */
+.user-box {
+  display: inline-block;
+  margin: 10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+}
+
+/* Fade-in animacija */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Leaderboard */
+.leaderboard-table {
+  border-collapse: collapse;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  margin: 0 auto;
+}
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #fff;
+  padding: 8px 12px;
+}
+
+/* Zmagovalec */
+.winner-box {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Kocke */
+.dice {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  vertical-align: middle;
+}
+.dice-sum {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Timer */
+#redirect-timer {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.swal2-html-container {
+  /* manj zgornjega roba nad vsebino in manj paddinga */
+  margin-top: 0.1em !important;
+  padding: 0.5em !important;
+  line-height: 1.4 !important;
+}
+.swal2-html-container ol,
+.swal2-html-container ul {
+  margin: 0.5em;
+  padding-left: 1.2em; 
+}
